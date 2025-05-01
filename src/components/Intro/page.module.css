@@ -21,6 +21,8 @@
     z-index: 3;
     color: white;
     font-size: 7vw;
+    font-weight: bold;
+    letter-spacing: -6px;
     text-transform: uppercase;
 }
 
@@ -28,6 +30,7 @@
     position: absolute;
     width: 350px;
     height: 475px;
+    filter: brightness(70%);
 }
 .introImage img{
 object-fit: cover;

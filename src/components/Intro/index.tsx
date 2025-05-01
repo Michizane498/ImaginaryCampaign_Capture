@@ -1,9 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 export default function index() {
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   return (
     <div className={styles.intro}>
       <div className={styles.backgroundImage}>
@@ -14,14 +20,10 @@ export default function index() {
         />
       </div>
       <div className={styles.introContainer}>
-        <div className={styles.introImage}>
-          <Image
-            alt="Background image"
-            fill={true}
-            src={"/aura.jpg"}
-          />
+        <div data-scroll data-scroll-speed="0.3" className={styles.introImage}>
+          <Image alt="Background image" fill={true} src={"/aura.jpg"} />
         </div>
-        <h1>Smooth Scroll</h1>
+        <h1 data-scroll data-scroll-speed="0.7">Smooth Scroll</h1>
       </div>
     </div>
   );
