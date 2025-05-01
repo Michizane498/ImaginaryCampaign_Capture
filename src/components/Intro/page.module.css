@@ -11,7 +11,7 @@
 }
 
 .introContainer {
-    margin-top: 35vh;
+    margin-top: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,4 +34,5 @@
 }
 .introImage img{
 object-fit: cover;
+object-position: top;
 }
