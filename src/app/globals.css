@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "NeueMontreal-Medium";
+  src: url("./fonts/NeueMontreal-Medium.woff2") format("woff2"),
+    url("./fonts/NeueMontreal-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body {
+  font-family: "NeueMontreal-Medium", -apple-system, BlinkMacSystemFont,
+    sans-serif;
 }
