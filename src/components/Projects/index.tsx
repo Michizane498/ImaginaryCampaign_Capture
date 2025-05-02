@@ -32,9 +32,7 @@ export default function index() {
         <div className={styles.column}>
           <p>
             Whether using a smartphone or a professional camera, the art lies in
-            framing a story within a single image. Patience, creativity, and
-            technical knowledge all come together to transform ordinary scenes
-            into lasting memories.
+            framing a story within a single image.
           </p>
         </div>
         <div className={styles.column}>
@@ -44,6 +42,15 @@ export default function index() {
             focus, balanced composition, and thoughtful lighting.
           </p>
         </div>
+      </div>
+      <div className={styles.projectList}>
+        {projects.map((project, index) => {
+          return (
+            <div className={styles.projectEl} key={`p_${index}`}>
+              <p>{project.title}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
