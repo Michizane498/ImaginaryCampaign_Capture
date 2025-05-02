@@ -1,10 +1,11 @@
 "use client";
 
+import LocomotiveScroll from "locomotive-scroll";
 import { useEffect } from "react";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Scroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    let locomotiveScroll: any;
+    let locomotiveScroll: LocomotiveScroll;
 
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
