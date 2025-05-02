@@ -1,6 +1,4 @@
 .projects {
-  border-color: red;
-  border-width: 2px;
   display: flex;
   flex-direction: column;
   margin-top: 25vh;
@@ -9,8 +7,6 @@
 }
 
 .projectDescription {
-  border-color: red;
-  border-width: 2px;
   display: flex;
   height: 700px;
   gap: 5%;
@@ -19,8 +15,6 @@
 }
 
 .imageContainer {
-  border-color: red;
-  border-width: 2px;
   position: relative;
   height: 100%;
   width: 40%;
@@ -31,8 +25,6 @@
 }
 
 .column {
-  border-color: red;
-  border-width: 2px;
   width: 20%;
   display: flex;
   font-size: 1.5vw;

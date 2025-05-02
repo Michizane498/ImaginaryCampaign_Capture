@@ -18,7 +18,6 @@ export default function index() {
         start: "top top",
         end: "+=500px",
         scrub: true,
-        markers: true,
         toggleActions: "play none none reverse",
       },
     });

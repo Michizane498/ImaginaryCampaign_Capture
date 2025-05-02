@@ -24,17 +24,18 @@ function AnimatedText({ children }: { children: React.ReactNode }) {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.fromTo(text.current, 
+    gsap.fromTo(
+      text.current,
       { x: "-200px", opacity: 0 }, // from state
-      { 
-        x: "0px", opacity: 1, // to state
+      {
+        x: "0px",
+        opacity: 1, // to state
         scrollTrigger: {
           trigger: text.current,
           start: "top bottom", // when top of element hits bottom of viewport
           end: "bottom+=400px bottom", // when top of element hits center of viewport
           scrub: true,
-          markers: true,
-        }
+        },
       }
     );
   }, []);
