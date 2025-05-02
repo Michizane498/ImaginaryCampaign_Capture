@@ -51,7 +51,7 @@ export default function index() {
           <Image alt="Background image" fill={true} src={"/back7.jpg"} />
         </div>
         <h1 data-scroll data-scroll-speed="0.7">
-          Capture
+          Imaginary Brand
         </h1>
       </div>
     </div>
