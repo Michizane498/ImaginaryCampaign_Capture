@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import React, { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 export default function index() {
@@ -18,7 +18,6 @@ export default function index() {
         start: "top top",
         end: "+=500px",
         scrub: true,
-        markers: true,
         toggleActions: "play none none reverse",
       },
     });
@@ -26,8 +25,8 @@ export default function index() {
     timeline
     .fromTo(
       backgroundImage.current,
-      { clipPath: "inset(15%)" }, // start state
-      { clipPath: "inset(0%)" }   // end state
+      { clipPath: "inset(15%)" },
+      { clipPath: "inset(0%)" }
     )
       .to(introImage.current, { height: "120px" }, 0);
 
@@ -52,7 +51,7 @@ export default function index() {
           <Image alt="Background image" fill={true} src={"/back7.jpg"} />
         </div>
         <h1 data-scroll data-scroll-speed="0.7">
-          Smooth Scroll
+          capture
         </h1>
       </div>
     </div>
