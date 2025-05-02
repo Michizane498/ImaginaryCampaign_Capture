@@ -20,23 +20,23 @@ export default function index() {
 }
 
 function AnimatedText({ children }: { children: React.ReactNode }) {
-
   const text = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(text.current, {
-        scrollTrigger:{
-            trigger:text.current,
-            start: '0px bottom',
-            end:'bottom+=400px bottom',
-            scrub: true,
-            markers:true
-        },
-        left:"-200px",
-        opacity:0,
-    })
+    gsap.fromTo(text.current, 
+      { x: "-200px", opacity: 0 }, // from state
+      { 
+        x: "0px", opacity: 1, // to state
+        scrollTrigger: {
+          trigger: text.current,
+          start: "top bottom", // when top of element hits bottom of viewport
+          end: "bottom+=400px bottom", // when top of element hits center of viewport
+          scrub: true,
+          markers: true,
+        }
+      }
+    );
   }, []);
-
   return <p ref={text}>{children}</p>;
 }
