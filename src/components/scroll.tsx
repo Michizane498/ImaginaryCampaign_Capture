@@ -4,10 +4,20 @@ import { useEffect } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    let locomotiveScroll: any;
+
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll();
+      locomotiveScroll = new LocomotiveScroll({
+        // Add any other options you need
+      });
     })();
+
+    return () => {
+      if (locomotiveScroll) {
+        locomotiveScroll.destroy();
+      }
+    };
   }, []);
 
   return <main data-scroll-container>{children}</main>;
