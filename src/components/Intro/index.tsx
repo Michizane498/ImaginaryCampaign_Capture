@@ -5,7 +5,8 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-export default function index() {
+
+export default function Intro() {  // Changed from 'index' to 'HeroAnimation'
   const backgroundImage = useRef<HTMLDivElement>(null);
   const introImage = useRef<HTMLDivElement>(null);
 
@@ -23,11 +24,11 @@ export default function index() {
     });
 
     timeline
-    .fromTo(
-      backgroundImage.current,
-      { clipPath: "inset(15%)" }, // start state
-      { clipPath: "inset(0%)" }   // end state
-    )
+      .fromTo(
+        backgroundImage.current,
+        { clipPath: "inset(15%)" },
+        { clipPath: "inset(0%)" }
+      )
       .to(introImage.current, { height: "250px" }, 0);
 
   }, []);
@@ -38,7 +39,8 @@ export default function index() {
         <Image
           alt="Background image"
           fill={true}
-          src={"/back6.jpg"}
+          src="/back6.jpg"
+          priority={true}  // Added for better loading
         />
       </div>
       <div className={styles.introContainer}>
@@ -48,7 +50,12 @@ export default function index() {
           data-scroll-speed="0.3"
           className={styles.introImage}
         >
-          <Image alt="Background image" fill={true} src={"/back7.jpg"} />
+          <Image 
+            alt="Intro image" 
+            fill={true} 
+            src="/back7.jpg" 
+            priority={true} 
+          />
         </div>
         <h1 data-scroll data-scroll-speed="0.7">
           Imaginary Brand
