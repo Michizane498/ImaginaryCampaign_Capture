@@ -28,7 +28,7 @@ export default function index() {
       { clipPath: "inset(15%)" }, // start state
       { clipPath: "inset(0%)" }   // end state
     )
-      .to(introImage.current, { height: "200px" }, 0);
+      .to(introImage.current, { height: "250px" }, 0);
 
   }, []);
 
